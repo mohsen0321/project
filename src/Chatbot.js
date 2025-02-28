@@ -14,7 +14,7 @@ const Chatbot = () => {
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-
+  // welcdwlcdwlcdpscpkwp;'
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
