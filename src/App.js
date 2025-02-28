@@ -17,12 +17,13 @@ import Footer from './component/Footer';
 import ScrollToTop from './component/ScrollToTop';
 import TestimonialsSection from './component/TestimonialsSection';
 import WhatsAppButton from './WhatsAppButton';
+import Chatbot from './Chatbot';
 // import Testimonials from './Testimonials';
 
 function App() {
   return (
     <div className="App">
-      
+     
       <Navbar />
       <HeroSection />
       <ScrollToTop />
@@ -34,6 +35,7 @@ function App() {
       <TestimonialsSection />
       <Footer />
       <WhatsAppButton />
+      <Chatbot />
 
     </div>
   );
