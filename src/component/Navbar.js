@@ -41,13 +41,8 @@ function Navbar() {
             </button>
           </li>
           <li>
-            <button className="w-full text-left lg:w-auto text-gray-700 font-bold py-2 px-3 hover:text-blue-500 hover:scale-105 border-b-2 border-transparent hover:border-blue-500 transition-all duration-300">
-              Docs
-            </button>
-          </li>
-          <li>
-            <button className="w-full text-left lg:w-auto text-gray-700 font-bold py-2 px-3 hover:text-blue-500 hover:scale-105 border-b-2 border-transparent hover:border-blue-500 transition-all duration-300">
-              Dateset
+            <button className="w-full text-left lg:w-auto text-gray-700 font-bold py-2 px-3 hover:text-blue-500 hover:scale-105 border-b-2 border-transparent hover:border-blue-500 transition-all duration-300 active:text-blue-500 active:border-blue-500">
+              Architecture
             </button>
           </li>
           <li>
@@ -57,7 +52,18 @@ function Navbar() {
           </li>
           <li>
             <button className="w-full text-left lg:w-auto text-gray-700 font-bold py-2 px-3 hover:text-blue-500 hover:scale-105 border-b-2 border-transparent hover:border-blue-500 transition-all duration-300">
+              Dateset
+            </button>
+          </li>
+         
+          <li>
+            <button className="w-full text-left lg:w-auto text-gray-700 font-bold py-2 px-3 hover:text-blue-500 hover:scale-105 border-b-2 border-transparent hover:border-blue-500 transition-all duration-300">
               Learn
+            </button>
+          </li>
+          <li>
+            <button className="w-full text-left lg:w-auto text-gray-700 font-bold py-2 px-3 hover:text-blue-500 hover:scale-105 border-b-2 border-transparent hover:border-blue-500 transition-all duration-300">
+              Docs
             </button>
           </li>
         </ul>

@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Modal from "react-modal";
 import white from '../assets/Icons/white.png';
 import black from '../assets/Icons/black.png';
 
+// ربط Modal بـ root لتجنب مشاكل الوصول
+Modal.setAppElement('#root');
+
 const HeroSection = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
   return (
     <section className="flex flex-col-reverse lg:flex-row items-center justify-between px-4 py-16 md:px-16 lg:px-32 bg-gray-100 min-h-[70vh]">
       {/* Left Section (Text and Buttons) */}
@@ -35,14 +49,12 @@ const HeroSection = () => {
             <img src={black} alt="Microsoft" className="w-5" />
             <span>Download in the Microsoft</span>
           </button>
-          <a
-            href="https://youtu.be/O8OntvmrULo?si=FSlybOiHfPy40f5F"
-            target="_blank"
-            rel="noreferrer" // إضافة rel="noreferrer" لإصلاح التحذير
+          <button
+            onClick={openModal}
             className="text-blue-500 text-base md:text-lg font-medium hover:underline flex items-center"
           >
             Watch demo
-          </a>
+          </button>
         </div>
       </motion.div>
 
@@ -53,6 +65,48 @@ const HeroSection = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
       ></motion.div>
+
+      {/* Modal for Video */}
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={{
+          content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+            width: '80%',
+            maxWidth: '800px',
+            padding: '0',
+            border: 'none',
+            background: 'transparent',
+          },
+          overlay: {
+            backgroundColor: 'rgba(0, 0, 0, 0.75)',
+          },
+        }}
+      >
+        <div className="relative">
+          <button
+            onClick={closeModal}
+            className="absolute top-2 right-2 text-white bg-red-500 rounded-full w-8 h-8 flex items-center justify-center"
+          >
+            X
+          </button>
+          <iframe
+            width="100%"
+            height="450"
+            src="https://www.youtube.com/embed/O8OntvmrULo?si=FSlybOiHfPy40f5F"
+            title="Demo Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </Modal>
     </section>
   );
 };

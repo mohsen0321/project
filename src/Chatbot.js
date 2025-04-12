@@ -30,8 +30,8 @@ const Chatbot = () => {
           💬
         </button>
         {showWelcome && (
-          <span className="absolute bottom-16 ml-10 bg-gray-800 text-white py-1 px-2 rounded-md text-sm whitespace-nowrap animate-[fadeInOut_10s_ease-in-out_forwards]">
-            مرحبًا! أنا هنا لكي أساعدك، ماذا تريد ان تتحدث؟
+          <span className="absolute bottom-16 mr-12 bg-gray-800 text-white py-1 px-2 rounded-md text-sm whitespace-nowrap animate-[fadeInOut_10s_ease-in-out_forwards]">
+            مرحبًا! هيا  بنا  تتحدث؟
           </span>
         )}
       </div>
