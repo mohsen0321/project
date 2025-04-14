@@ -1,3 +1,9 @@
+
+
+
+
+
+
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 
@@ -25,6 +31,39 @@ const ChatPage = () => {
     }
   }, [messages.length]);
 
+  const typeText = async (fullText) => {
+    const chars = fullText.split("");
+
+    for (let i = 0; i < chars.length; i++) {
+      const currentText = chars.slice(0, i + 1).join("");
+      await new Promise((resolve) => setTimeout(resolve, 15));
+      
+      setMessages((prev) => {
+        const updated = [...prev];
+        const last = updated[updated.length - 1];
+        if (last && last.sender === "bot-typing") {
+          updated[updated.length - 1] = {
+            ...last,
+            text: currentText,
+          };
+        } else {
+          updated.push({ sender: "bot-typing", text: currentText });
+        }
+        return updated;
+      });
+    }
+
+    setMessages((prev) => {
+      const updated = [...prev];
+      if (updated[updated.length - 1]?.sender === "bot-typing") {
+        updated[updated.length - 1] = { sender: "bot", text: fullText };
+      } else {
+        updated.push({ sender: "bot", text: fullText });
+      }
+      return updated;
+    });
+  };
+
   const sendMessage = async () => {
     if (!input.trim()) return;
 
@@ -35,24 +74,26 @@ const ChatPage = () => {
 
     try {
       const response = await axios.post(
-        "https://openrouter.ai/api/v1/chat/completions",
+        "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyCpw8Jl4rzRN6ER1OWTdvoV-nN3cvbG984",
         {
-          model: "google/gemini-pro",
-          messages: [{ role: "user", content: input }],
+          contents: [
+            {
+              parts: [{ text: input }],
+            },
+          ],
         },
         {
           headers: {
-            Authorization: `Bearer YOUR_API_KEY_HERE`, // أضف مفتاح API هنا
             "Content-Type": "application/json",
           },
         }
       );
 
-      const botMessage = {
-        sender: "bot",
-        text: response.data.choices[0].message.content,
-      };
-      setMessages((prevMessages) => [...prevMessages, botMessage]);
+      const fullText =
+        response.data.candidates?.[0]?.content?.parts?.[0]?.text ||
+        "معذرة، لم أستطع فهم طلبك.";
+
+      await typeText(fullText);
     } catch (error) {
       console.error("خطأ في الاتصال:", error);
       setMessages((prevMessages) => [
@@ -70,10 +111,10 @@ const ChatPage = () => {
     <div className="font-sans min-h-screen bg-gray-50 flex flex-col">
       <div className="flex-1 flex flex-col w-full max-w-md mx-auto">
         <div className="bg-blue-400 text-white text-xl font-sans p-2 flex justify-between items-center">
-          <span>🤖 Model Craft Chat</span>
+          <span>🤖 Gemini Chat</span>
           <button
             className="bg-transparent border-none text-white text-base cursor-pointer"
-            onClick={() => window.history.back()} // الرجوع للصفحة الرئيسية
+            onClick={() => window.history.back()}
           >
             ✖
           </button>
@@ -86,17 +127,14 @@ const ChatPage = () => {
               className={`p-2 rounded-md max-w-[80%] break-words text-lg ${
                 msg.sender === "user"
                   ? "bg-blue-500 text-black text-[22px] self-end"
+                  : msg.sender === "bot-typing"
+                  ? "bg-blue-100 text-blue-400 italic self-start"
                   : "bg-gray-200 text-gray-700 self-start"
-              } ${msg.sender === "bot" && isLoading ? "bg-blue-100 text-blue-400 italic" : ""}`}
+              }`}
             >
               {msg.text}
             </div>
           ))}
-          {isLoading && (
-            <div className="p-2 rounded-md bg-blue-100 text-blue-400 italic self-start">
-              جاري التحميل...
-            </div>
-          )}
           <div ref={messagesEndRef} />
         </div>
 
