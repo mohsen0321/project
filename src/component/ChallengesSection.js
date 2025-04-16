@@ -1,10 +1,47 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 import puzzle from '../assets/Icons/puzzle.png'; 
 import dollar from '../assets/Icons/dollar-symbol.png'; 
 import removebg from '../assets/Icons/removebg-preview.png';  
 
 const ChallengesSection = () => {
+  const imageRef = useRef(null);
+
+  // قيم Motion للتحكم في الميل
+  const rotateX = useMotionValue(0);
+  const rotateY = useMotionValue(0);
+  const springConfig = { damping: 30, stiffness: 300 };
+  const rotateXSpring = useSpring(rotateX, springConfig);
+  const rotateYSpring = useSpring(rotateY, springConfig);
+
+  // التعامل مع حركة المؤشر
+  const handleMouseMove = (e) => {
+    if (!imageRef.current) return;
+
+    const rect = imageRef.current.getBoundingClientRect();
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    // حساب موقع المؤشر بالنسبة لمركز الصورة
+    const mouseX = e.clientX - rect.left - centerX;
+    const mouseY = e.clientY - rect.top - centerY;
+
+    // حساب زاوية الميل بناءً على موقع المؤشر
+    const maxTilt = 20; // الحد الأقصى لزاوية الميل
+    const tiltX = -(mouseY / centerY) * maxTilt; // الميل للأعلى/الأسفل
+    const tiltY = (mouseX / centerX) * maxTilt; // الميل لليمين/اليسار
+
+    // تحديث قيم الميل
+    rotateX.set(tiltX);
+    rotateY.set(tiltY);
+  };
+
+  // إعادة الصورة إلى الوضع الافتراضي عند مغادرة المؤشر
+  const handleMouseLeave = () => {
+    rotateX.set(0);
+    rotateY.set(0);
+  };
+
   return (
     <div className="bg-[#e9f2fa] py-10 px-5 md:px-10 flex flex-col items-center font-sans">
       {/* العنوان مع الانيميشن */}
@@ -83,7 +120,11 @@ const ChallengesSection = () => {
 
         {/* عنصر الصورة على اليمين */}
         <motion.div 
-          className="bg-[#9db3ce] w-full md:w-[300px] lg:w-[400px] h-[280px] md:h-[330px] lg:h-[430px] rounded-xl mx-auto md:ml-[10%] lg:ml-[14%] flex-shrink-0"
+          ref={imageRef}
+          className="bg-[#9db3ce] w-full md:w-[300px] lg:w-[400px] h-[280px] md:h-[330px] lg:h-[430px] rounded-xl mx-auto md:ml-[10%] lg:ml-[14%] flex-shrink-0 cursor-pointer"
+          style={{ rotateX: rotateXSpring, rotateY: rotateYSpring, perspective: 1000 }}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
           initial={{ x: 150, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
