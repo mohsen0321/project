@@ -146,7 +146,7 @@ const HeroSection = () => {
         </div>
 
         {/* Buttons Section */}
-        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-8">
+        <div className="flex flex-col sm:flex-row items-center justify-end sm:justify-end lg:justify-end gap-4 mt-8 ml-auto sm:ml-auto lg:ml-auto">
           <button
             className="bg-black text-white px-6 py-3 rounded-lg flex items-center gap-2 w-full sm:w-auto justify-center hover:bg-gray-800 transition-colors duration-300"
             aria-label="Download from App Store"
