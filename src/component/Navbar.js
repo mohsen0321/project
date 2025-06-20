@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../Screenshot 2024-11-04 193746.png';
+import logo from '../assets/Icons/icon_aino.png';
 import { BsList, BsX } from 'react-icons/bs';
 import '../Navbar.css'; // استيراد ملف CSS
 
@@ -15,8 +15,8 @@ function Navbar() {
       <div className="flex justify-between items-center w-full mx-auto max-w-screen-xl">
         {/* Logo */}
         <div className="flex items-center">
-          <img src={logo} alt="Logo" className="w-7 h-auto mr-2" />
-          <span className="text-2xl font-bold">Model Craft</span>
+          <img src={logo} alt="Logo" className="w-7 h-auto mr-2 logn" />
+          <span className="text-2xl font-bold">AINO</span>
         </div>
 
         {/* Hamburger Button */}

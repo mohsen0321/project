@@ -20,28 +20,24 @@ const ExportSection = () => {
       const cardWidth = rect.width;
       const cardHeight = rect.height;
 
-      // Calculate mouse position relative to the card's center
       const mouseX = e.clientX - rect.left - cardWidth / 2;
       const mouseY = e.clientY - rect.top - cardHeight / 2;
 
-      // Calculate rotation angles (adjust the divisor to control tilt intensity)
-      const rotateY = (mouseX / cardWidth) * 20; // Tilt left/right
-      const rotateX = -(mouseY / cardHeight) * 20; // Tilt up/down
+      const rotateY = (mouseX / cardWidth) * 20;
+      const rotateX = -(mouseY / cardHeight) * 20;
 
-      // Apply the transform
       card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
     };
 
     const handleMouseLeave = () => {
-      // Reset transform on mouse leave
       cardRef.current.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
     };
 
     return (
       <div
         ref={cardRef}
-        className="flex flex-col items-center bg-white border-2 border-gray-300 rounded-lg p-4 transition-all duration-300 ease-in-out hover:border-cyan-400 hover:cursor-pointer"
-        style={{ transition: "transform 0.2s ease-out, border-color 0.3s ease-in-out" }} // Smooth transform transition
+        className="flex flex-col items-center bg-white border-2 border-gray-300 rounded-3xl p-4 transition-all duration-300 ease-in-out hover:border-cyan-400 hover:cursor-pointer"
+        style={{ transition: "transform 0.2s ease-out, border-color 0.3s ease-in-out" }}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
@@ -62,10 +58,9 @@ const ExportSection = () => {
     >
       <h1 className="text-4xl font-extrabold mb-2">Export your model anywhere</h1>
       <p className="text-base text-gray-600 mb-8">
-        Model Craft lets you export your trained model to several platforms.
+        AINO lets you export your trained model to several platforms.
       </p>
       <div className="max-w-4xl mx-auto">
-        {/* First row */}
         <div className="grid md:grid-cols-2 grid-cols-1 gap-8 mb-8">
           <Card
             imgSrc="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/768px-Tensorflow_logo.svg.png"
@@ -82,7 +77,6 @@ const ExportSection = () => {
             descriptionColor="text-orange-700"
           />
         </div>
-        {/* Second row */}
         <div className="grid md:grid-cols-2 grid-cols-1 gap-8">
           <Card
             imgSrc="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"

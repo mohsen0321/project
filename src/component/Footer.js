@@ -12,7 +12,7 @@ const Footer = () => {
       setIsVisible(true);
     }, 7500);
 
-    return () => clearTimeout(timer); // تنظيف التايمر بعد الانتهاء
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -24,7 +24,6 @@ const Footer = () => {
   );
 };
 
-// قسم النشرة الإخبارية
 const NewsletterSection = () => (
   <div className="newsletter-section">
     <h2 className="newsletter-title">Join Our Newsletter</h2>
@@ -44,7 +43,6 @@ const NewsletterSection = () => (
   </div>
 );
 
-// القسم الرئيسي في الـ Footer
 const FooterMain = () => (
   <div className="footer-main">
     <FooterAbout />
@@ -52,7 +50,6 @@ const FooterMain = () => (
   </div>
 );
 
-// قسم "حول" في الـ Footer
 const FooterAbout = () => (
   <div className="footer-about">
     <div className="footer-logo-wrapper">
@@ -69,7 +66,6 @@ const FooterAbout = () => (
   </div>
 );
 
-// قسم الروابط في الـ Footer
 const FooterLinks = () => (
   <div className="footer-links-group">
     <FooterLinksColumn title="Home" links={["Overview", "Features", "Problems", "Case Studies"]} />
@@ -78,7 +74,6 @@ const FooterLinks = () => (
   </div>
 );
 
-// مكون لعرض عمود من الروابط
 const FooterLinksColumn = ({ title, links }) => (
   <div className="footer-links">
     <h5 className="footer-subtitle">{title}</h5>
@@ -90,7 +85,6 @@ const FooterLinksColumn = ({ title, links }) => (
   </div>
 );
 
-// القسم السفلي في الـ Footer
 const FooterBottom = () => (
   <div className="footer-bottom">
     <p className="footer-copyright">@Model Craft 2025. All Rights Reserved.</p>
@@ -98,22 +92,25 @@ const FooterBottom = () => (
   </div>
 );
 
-// أيقونات السوشيال ميديا
 const SocialIcons = () => (
   <div className="footer-social-icons">
-    <SocialIcon iconClass="github" />
-    <SocialIcon iconClass="linkedin" />
-    <SocialIcon iconClass="apple" />
-    <SocialIcon iconClass="twitter" />
-    <SocialIcon iconClass="facebook" />
+    <SocialIcon iconClass="github" href="#" />
+    <SocialIcon iconClass="linkedin" href="#" />
+    {/* <SocialIcon iconClass="apple" href="#" /> */}
+    {/* <SocialIcon iconClass="twitter" href="#" /> */}
+    <SocialIcon iconClass="facebook" href="https://www.facebook.com/share/16hfjPipe5/" />
   </div>
 );
 
-// مكون أيقونة سوشيال ميديا
-const SocialIcon = ({ iconClass }) => (
-  <div className={`social-icon ${iconClass}`}>
+const SocialIcon = ({ iconClass, href }) => (
+  <a
+    href={href}
+    className={`social-icon ${iconClass}`}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     <i className={`fab fa-${iconClass}`}></i>
-  </div>
+  </a>
 );
 
 export default Footer;
