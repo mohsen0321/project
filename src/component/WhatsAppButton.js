@@ -9,7 +9,7 @@ const WhatsAppButton = () => {
 
   return (
     <>
-      <style jsx global>{`
+      <style>{`
         @keyframes whatsappFadeIn {
           from { opacity: 0; }
           to { opacity: 1; }
@@ -74,8 +74,8 @@ const WhatsAppButton = () => {
               <div className="flex justify-center mb-4">
                 <FaWhatsapp className="text-4xl text-green-500" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-800 mb-3"> Contact us</h2>
-              <p className="text-gray-600 mb-6 text-base"> Start a conversation on WhatsApp now!</p>
+              <h2 className="text-2xl font-bold text-gray-800 mb-3">Contact us</h2>
+              <p className="text-gray-600 mb-6 text-base">Start a conversation on WhatsApp now!</p>
               <div className="flex gap-4">
                 <a
                   href="https://wa.me/201129330746"
@@ -83,7 +83,7 @@ const WhatsAppButton = () => {
                   rel="noopener noreferrer"
                   className="flex-1 px-4 py-3 bg-green-500 text-white rounded-lg font-semibold transition-all duration-300 ease-in-out hover:bg-green-600 hover:shadow-lg hover:scale-105 active:scale-95"
                 >
-                   Open whatsapp
+                  Open WhatsApp
                 </a>
                 <button
                   className="flex-1 px-4 py-3 bg-red-500 text-white rounded-lg font-semibold transition-all duration-300 ease-in-out hover:bg-red-600 hover:shadow-lg hover:scale-105 active:scale-95"

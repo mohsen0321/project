@@ -24,17 +24,16 @@ function ScrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setTimeout(() => {
       setClicked(false);
-    }, 800); // قللت الوقت لـ 0.8 ثانية عشان يبقى أسرع وأنعم
+    }, 800);
   };
 
   return (
     <>
-      {/* الـ CSS المخصص للأنيميشن */}
-      <style jsx global>{`
+      <style>{`
         @keyframes fadeIn {
           0% {
             opacity: 0;
-            transform: translateY(30px); /* قللت المسافة لسلاسة أكتر */
+            transform: translateY(30px);
           }
           100% {
             opacity: 1;
@@ -49,7 +48,7 @@ function ScrollToTop() {
           }
           100% {
             opacity: 0;
-            transform: translateY(30px); /* نفس المسافة للتناسق */
+            transform: translateY(30px);
           }
         }
 
@@ -59,26 +58,26 @@ function ScrollToTop() {
             opacity: 1;
           }
           50% {
-            transform: scale(1.3); /* قللت التكبير عشان ما يبقاش مبالغ فيه */
+            transform: scale(1.3);
             opacity: 0.8;
           }
           100% {
             transform: scale(1);
-            opacity: 1; /* رجعته لـ 1 عشان ما يختفيش */
+            opacity: 1;
           }
         }
 
         @keyframes rippleEffect {
           0% {
             transform: scale(0);
-            opacity: 0.8; /* بداية أقل شفافية */
+            opacity: 0.8;
           }
           50% {
-            transform: scale(2); /* قللت الحجم الأقصى للتموج */
+            transform: scale(2);
             opacity: 0.4;
           }
           100% {
-            transform: scale(4); /* زيادة بسيطة في النهاية */
+            transform: scale(4);
             opacity: 0;
           }
         }
@@ -88,12 +87,12 @@ function ScrollToTop() {
           position: absolute;
           top: 50%;
           left: 50%;
-          width: 15px; /* قللت الحجم عشان يبقى أرقى */
+          width: 15px;
           height: 15px;
           background-color: #ff7f50;
           border-radius: 50%;
           transform: translate(-50%, -50%);
-          animation: rippleEffect 0.8s ease-out forwards; /* وقت أقصر لسلاسة */
+          animation: rippleEffect 0.8s ease-out forwards;
           opacity: 0.8;
         }
 
@@ -102,12 +101,12 @@ function ScrollToTop() {
           position: absolute;
           top: 50%;
           left: 50%;
-          width: 25px; /* حجم أكبر شوية للتنوع */
+          width: 25px;
           height: 25px;
           background-color: #ff7f50;
           border-radius: 50%;
           transform: translate(-50%, -50%);
-          animation: rippleEffect 0.8s ease-out 0.2s forwards; /* تأخير أقل */
+          animation: rippleEffect 0.8s ease-out 0.2s forwards;
           opacity: 0.6;
         }
       `}</style>
