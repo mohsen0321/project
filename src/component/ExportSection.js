@@ -1,15 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useRef } from "react";
 
 const ExportSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 7000);
-    return () => clearTimeout(timer);
-  }, []);
-
   // Card component with tilt effect
   const Card = ({ imgSrc, alt, title, description, descriptionColor }) => {
     const cardRef = useRef(null);
@@ -51,11 +42,7 @@ const ExportSection = () => {
   };
 
   return (
-    <section
-      className={`w-full py-12 px-8 text-center bg-gray-100 transition-all duration-1000 ease-out ${
-        isVisible ? "opacity-100 translate-y-0 animate-slideUp" : "opacity-0 translate-y-[50px]"
-      }`}
-    >
+    <section className="w-full py-12 px-8 text-center bg-gray-100">
       <h1 className="text-4xl font-extrabold mb-2">Export your model anywhere</h1>
       <p className="text-base text-gray-600 mb-8">
         AINO lets you export your trained model to several platforms.

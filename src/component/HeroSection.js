@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import Modal from "react-modal";
 import white from '../assets/Icons/white.png';
 import black from '../assets/Icons/black.png';
-import heroImage from '../assets/Images/emotional-young-sportsman-make-sport-exercises-looking-aside_171337-15401.avif';
+import heroImage from '../assets/Images/ai-nuclear-energy-future-innovation-disruptive-technology.jpg';
 import '../hero.css'
 // ربط Modal بـ root لتجنب مشاكل الوصول
 Modal.setAppElement('#root');
@@ -175,7 +175,7 @@ const HeroSection = () => {
         ref={imageRef}
         src={heroImage}
         alt="Sportsman performing exercises, representing strength and innovation"
-        className="w-full sm:w-2/3 md:w-1/3 lg:w-1/5 max-w-full max-h-[400px] rounded-lg mx-auto lg:mx-0 mb-10 lg:mb-0 cursor-pointer shadow-lg object-contain"
+        className="w-full sm:w-2/3 md:w-1/3 lg:w-1/5 max-w-[270px] max-h-[400px] rounded-lg mx-auto lg:mx-0 mb-10 lg:mb-0 cursor-pointer shadow-lg object-contain"
         style={{
           rotateX: rotateXSpring,
           rotateY: rotateYSpring,

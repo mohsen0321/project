@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 import puzzle from '../assets/Icons/puzzle.png';
 import dollar from '../assets/Icons/dollar-symbol.png';
 import removebg from '../assets/Icons/removebg-preview.png';
-import yourImage from '../assets/Images/challenge.avif';
+import yourImage from '../assets/Images/robot-handshake-human-background-futuristic-digital-age.jpg';
 
 const ChallengesSection = () => {
   const imageRef = useRef(null);
