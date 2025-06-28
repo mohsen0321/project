@@ -11,7 +11,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 z-[999] w-full bg-white shadow-md border-b border-gray-200 px-4 py-2.5">
+    <nav className="fixed top-0 left-0 z-[999] w-full bg-white  shadow-md border-b border-gray-200 px-4 py-2.5">
       <div className="flex justify-between items-center w-full mx-auto max-w-screen-xl">
         {/* Logo */}
         <div className="flex items-center">
@@ -70,7 +70,7 @@ function Navbar() {
 
         {/* Action Buttons */}
         <div className="hidden lg:flex gap-2.5 lg:mt-2">
-          <button className="signup-btn">
+          <button className="signup-btn ">
             Sign Up / Log In
           </button>
           <button className="bg-blue-500 text-white rounded-md py-2 px-3 hover:bg-blue-600 transition-all duration-300">

@@ -96,7 +96,7 @@ function FeatureSection() {
             </p>
             <div className="mt-5">
               <button
-                onClick={() => openModal('https://www.youtube.com/embed/ytDBZW-1K50')}
+                onClick={() => openModal('https://www.youtube.com/embed/w-m8p-o65UA?si=1ZpI5LMNZJmSaj81')}
                 className="text-[#007bff] font-semibold hover:underline"
               >
                 Watch demo →
@@ -116,7 +116,7 @@ function FeatureSection() {
             </p>
             <div className="mt-5">
               <button
-                onClick={() => openModal('https://www.youtube.com/embed/ytDBZW-1K50')}
+                onClick={() => openModal('https://www.youtube.com/embed/w-m8p-o65UA?si=1ZpI5LMNZJmSaj81')}
                 className="text-[#007bff] font-semibold hover:underline"
               >
                 Watch demo →
@@ -136,7 +136,7 @@ function FeatureSection() {
             </p>
             <div className="mt-5">
               <button
-                onClick={() => openModal('https://www.youtube.com/embed/ytDBZW-1K50')}
+                onClick={() => openModal('https://www.youtube.com/embed/w-m8p-o65UA?si=1ZpI5LMNZJmSaj81')}
                 className="text-[#007bff] font-semibold hover:underline"
               >
                 Watch demo →

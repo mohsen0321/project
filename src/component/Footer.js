@@ -102,12 +102,12 @@ const SocialIcons = () => (
   <div className="footer-social-icons flex gap-4 mt-4 sm:mt-0">
     <SocialIcon
       iconClass="github"
-      href="https://github.com/AINO" // Placeholder, replace with actual URL
+      href="https://github.com/AINO" 
       label="GitHub"
     />
     <SocialIcon
       iconClass="linkedin"
-      href="https://linkedin.com/company/AINO" // Placeholder, replace with actual URL
+      href="https://linkedin.com/company/AINO" 
       label="LinkedIn"
     />
     <SocialIcon

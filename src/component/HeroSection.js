@@ -5,7 +5,6 @@ import white from '../assets/Icons/white.png';
 import black from '../assets/Icons/black.png';
 import heroImage from '../assets/Images/ai-nuclear-energy-future-innovation-disruptive-technology.jpg';
 import '../hero.css'
-// ربط Modal بـ root لتجنب مشاكل الوصول
 Modal.setAppElement('#root');
 
 const HeroSection = () => {
@@ -13,7 +12,6 @@ const HeroSection = () => {
   const [borderDirection, setBorderDirection] = useState(null);
   const imageRef = useRef(null);
 
-  // قيم Motion للتحكم في الميل والتكبير
   const rotateX = useMotionValue(0);
   const rotateY = useMotionValue(0);
   const scale = useMotionValue(1);
@@ -22,7 +20,6 @@ const HeroSection = () => {
   const rotateYSpring = useSpring(rotateY, springConfig);
   const scaleSpring = useSpring(scale, springConfig);
 
-  // تحديد اتجاه المؤشر وتحديث الحدود
   const handleMouseMove = useCallback((e) => {
     if (!imageRef.current) return;
 
@@ -33,7 +30,6 @@ const HeroSection = () => {
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
 
-    // حساب أقرب اتجاه للمؤشر
     const threshold = 0.2;
     let direction = null;
 
@@ -49,7 +45,6 @@ const HeroSection = () => {
 
     setBorderDirection(direction);
 
-    // حساب الميل
     const maxTilt = 20;
     const tiltX = -((mouseY - centerY) / centerY) * maxTilt;
     const tiltY = ((mouseX - centerX) / centerX) * maxTilt;
@@ -59,7 +54,6 @@ const HeroSection = () => {
     scale.set(1.02);
   }, [rotateX, rotateY, scale]);
 
-  // إعادة الحالة الافتراضية
   const handleMouseLeave = useCallback(() => {
     rotateX.set(0);
     rotateY.set(0);
@@ -75,7 +69,6 @@ const HeroSection = () => {
     setModalIsOpen(false);
   };
 
-  // تحديد أنماط الحدود بناءً على الاتجاه
   const getBorderStyle = () => {
     const borderWidth = '4px';
     const borderColor = '#3b82f6';
@@ -124,14 +117,14 @@ const HeroSection = () => {
 
   return (
     <section className="flex flex-col-reverse lg:flex-row items-center justify-between px-4 py-16 md:px-16 lg:px-32 bg-gray-100 min-h-[70vh]">
-      {/* Left Section (Text and Buttons) */}
+      
       <motion.div
         className="w-full lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0 space-y-6"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        {/* Text Section */}
+      
         <div className="space-y-4">
           <h1 className="text-blue-600 text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
             Build
@@ -144,7 +137,7 @@ const HeroSection = () => {
           </p>
         </div>
 
-        {/* Buttons Section */}
+      
         <div className="flex flex-col sm:flex-row items-center justify-end sm:justify-end lg:justify-end gap-4 mt-8 ml-auto sm:ml-auto lg:ml-auto">
           <button
             className="bg-black text-white px-6 py-3 rounded-lg flex items-center gap-2 w-full sm:w-auto justify-center hover:bg-gray-800 transition-colors duration-300"
@@ -170,7 +163,7 @@ const HeroSection = () => {
         </div>
       </motion.div>
 
-      {/* Right Section (Image) */}
+      
       <motion.img
         ref={imageRef}
         src={heroImage}
@@ -191,7 +184,7 @@ const HeroSection = () => {
         loading="lazy"
       />
 
-      {/* Modal for Video */}
+     
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -229,16 +222,17 @@ const HeroSection = () => {
           >
             X
           </button>
-          <iframe
-            width="100%"
-            height="450"
-            src="https://www.youtube.com/embed/O8OntvmrULo?si=FSlybOiHfPy40f5F"
-            title="Demo Video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="rounded-lg"
-          ></iframe>
+          <iframe 
+          width="100%" 
+          height="450" 
+          src="https://www.youtube.com/embed/w-m8p-o65UA?si=1ZpI5LMNZJmSaj81" 
+          title="YouTube video player"
+           frameborder="0" 
+           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+           referrerpolicy="strict-origin-when-cross-origin" 
+           allowfullscreen
+           className="rounded-lg"
+           ></iframe>
         </div>
       </Modal>
     </section>
