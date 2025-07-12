@@ -92,7 +92,7 @@ const FooterLinksColumn = ({ title, links }) => (
 const FooterBottom = () => (
   <div className="footer-bottom max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center border-t border-gray-300 pt-6">
     <p className="footer-copyright text-gray-600 text-sm sm:text-base">
-      @AINO Craft 2025. All Rights Reserved.
+      @AINO  2025. All Rights Reserved.
     </p>
     <SocialIcons />
   </div>

@@ -65,7 +65,7 @@ const HeroSection = () => {
         </div>
 
         {/* الصورة */}
-                            <div
+                <div
                 className="mt-4 sm:mt-6 md:mt-8 mb-6 sm:mb-0 rounded-lg sm:rounded-xl w-full max-w-xs sm:max-w-md md:max-w-2xl bg-transparent"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}

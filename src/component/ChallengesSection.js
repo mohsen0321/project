@@ -5,7 +5,7 @@ import removebg from '../assets/Icons/removebg-preview.png';
 
 const Card = ({ icon, title, description }) => (
   <div className="bg-white p-6 rounded-2xl shadow-lg text-center w-full sm:w-72 
-    transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+    transition-transform duration-300 hover:-translate-y-4 hover:shadow-xl cursor-pointer">
     <div className="flex justify-center mb-4">
       <img src={icon} alt="Icon" className="w-14 h-14" />
     </div>

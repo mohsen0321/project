@@ -15,7 +15,7 @@ function Navbar() {
       <div className="flex justify-between items-center w-full mx-auto max-w-screen-xl">
         {/* Logo */}
         <div className="flex items-center">
-          <img src={logo} alt="Logo" className="w-7 h-auto mr-2 logn" />
+          <img src={logo} alt="Logo" className="w-[35px] h-auto mr-2 " />
           <span className="text-2xl font-bold">AINO</span>
         </div>
 
@@ -31,17 +31,17 @@ function Navbar() {
         <ul
           className={`${
             menuOpen
-              ? 'flex flex-col gap-2 p-4 absolute top-[60px] left-0 w-full bg-[rgba(255,247,247,0.9)] backdrop-blur-md opacity-100 visible translate-y-0 z-50'
+              ? 'flex flex-col gap-2 p-4 absolute top-[55px] left-0 w-full bg-[rgba(255,247,247,0.9)] backdrop-blur-md opacity-100 visible translate-y-0 z-50'
               : 'hidden lg:flex lg:gap-4 lg:items-center lg:static lg:w-auto lg:bg-transparent lg:opacity-100 lg:visible lg:translate-y-0 lg:mt-2'
           } transition-all duration-300 ease-in-out`}
         >
           <li>
-            <button className="w-full text-left lg:w-auto text-gray-700 font-bold py-2 px-3 hover:text-blue-500 hover:scale-105 border-b-2 border-transparent hover:border-blue-500 transition-all duration-300 active:text-blue-500 active:border-blue-500">
+            <button className="w-full text-left lg:w-auto text-gray-700 font-bold py-2 px-3 hover:text-blue-500 hover:scale-105 border-b-2 border-transparent hover:border-blue-500 transition-all duration-300">
               Home
             </button>
           </li>
           <li>
-            <button className="w-full text-left lg:w-auto text-gray-700 font-bold py-2 px-3 hover:text-blue-500 hover:scale-105 border-b-2 border-transparent hover:border-blue-500 transition-all duration-300 active:text-blue-500 active:border-blue-500">
+            <button className="w-full text-left lg:w-auto text-gray-700 font-bold py-2 px-3 hover:text-blue-500 hover:scale-105 border-b-2 border-transparent hover:border-blue-500 transition-all duration-300 ">
               Architecture
             </button>
           </li>
