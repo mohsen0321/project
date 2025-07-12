@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../Screenshot 2024-11-04 193746.png";
+import logo from "../assets/Icons/AICON.png";
 import appleIcon from "../assets/Icons/mac-os-logo.png";
 import windowsIcon from "../assets/Icons/menu.png";
 
@@ -56,10 +56,10 @@ const FooterAbout = () => (
     <p className="footer-description text-gray-600 text-sm sm:text-base mb-4">
       AINO   makes building, training, and deploying AI models accessible to everyone.
     </p>
-    <div className="footer-icons flex justify-center sm:justify-start gap-4">
+    {/* <div className="footer-icons flex justify-center sm:justify-start gap-4">
       <img src={appleIcon} alt="Apple App Store" className="footer-icon-image w-6 h-6 object-contain" />
       <img src={windowsIcon} alt="Windows Store" className="footer-icon-image w-6 h-6 object-contain" />
-    </div>
+    </div> */}
     </div>
 );
 

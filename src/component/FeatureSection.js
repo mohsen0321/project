@@ -95,12 +95,12 @@ function FeatureSection() {
               Start your AI journey with guided workflows, tutorials, an intuitive interface that demystifies AI development and helps you build skills as you go.
             </p>
             <div className="mt-5">
-              <button
+              {/* <button
                 onClick={() => openModal('https://www.youtube.com/embed/w-m8p-o65UA?si=1ZpI5LMNZJmSaj81')}
                 className="text-[#007bff] font-semibold hover:underline"
               >
                 Watch demo →
-              </button>
+              </button> */}
             </div>
           </div>
           <div
@@ -115,12 +115,12 @@ function FeatureSection() {
               Begin your AI journey with guided workflows, tutorials, and an intuitive interface that demystifies AI development and helps you build skills as you go.
             </p>
             <div className="mt-5">
-              <button
+              {/* <button
                 onClick={() => openModal('https://www.youtube.com/embed/w-m8p-o65UA?si=1ZpI5LMNZJmSaj81')}
                 className="text-[#007bff] font-semibold hover:underline"
               >
                 Watch demo →
-              </button>
+              </button> */}
             </div>
           </div>
           <div
@@ -135,12 +135,12 @@ function FeatureSection() {
               Accelerate your team’s AI projects with scalable solutions and collaborative tools, ensuring quick, impactful results for your organization.
             </p>
             <div className="mt-5">
-              <button
+              {/* <button
                 onClick={() => openModal('https://www.youtube.com/embed/w-m8p-o65UA?si=1ZpI5LMNZJmSaj81')}
                 className="text-[#007bff] font-semibold hover:underline"
               >
                 Watch demo →
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
