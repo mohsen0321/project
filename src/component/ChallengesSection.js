@@ -30,17 +30,17 @@ const ChallengeSection = () => (
         <Card
           icon={puzzle}
           title="High Learning Curve and Complex Tools"
-          description="Traditional AI platforms are complex and require expertise, making development slow. ModelCraft simplifies this with an intuitive, all-in-one platform for all skill levels."
+          description="Traditional AI platforms are complex and require expertise, making development slow. AINO simplifies this with an intuitive, all-in-one platform for all skill levels."
         />
         <Card
           icon={dollar}
           title="Expensive Resources Limit Accessibility"
-          description="Costly infrastructure and resources make many AI solutions inaccessible. ModelCraft offers scalable, cloud-based infrastructure to cut costs without sacrificing capability."
+          description="Costly infrastructure and resources make many AI solutions inaccessible. AINO offers scalable, cloud-based infrastructure to cut costs without sacrificing capability."
         />
         <Card
           icon={removebg}
           title="Repetitive Tasks Slow Down Progress"
-          description="Repetitive tasks in AI development slow innovation. ModelCraft automates data preparation, model selection, and tuning, freeing you to build impactful AI solutions."
+          description="Repetitive tasks in AI development slow innovation. AINO automates data preparation, model selection, and tuning, freeing you to build impactful AI solutions."
         />
       </div>
     </div>
